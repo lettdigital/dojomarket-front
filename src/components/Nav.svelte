@@ -20,18 +20,19 @@
 		color: #000;
 		display: flex;
 		align-items: center;
+		position: absolute;
 	}
 
 	h1 {
-		font-size: 1.3em;
+		font-size: 2em;
 		margin: 0px;
-		margin-left: 0.75em;
+		margin-left: 0.5em;
 	}
 </style>
 
 <nav>
 	<a href=".">
-		<Icon scale="1.5" data={shoppingCart} style="color: var(--primary-color)" spin={false}/>
+		<Icon scale="2" data={shoppingCart} style="color: var(--primary-color)" spin={false}/>
 		<h1>Dojo Market</h1>
 	</a>
 	<Menu {segment}/>

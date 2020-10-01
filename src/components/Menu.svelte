@@ -6,6 +6,9 @@
 	ul {
 		margin: 0;
 		padding: 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 
 	/* clearfix */
@@ -39,6 +42,7 @@
 		text-decoration: none;
 		padding: 1em 0.5em;
 		display: block;
+		font-size: 1.3em
 	}
 </style>
 
