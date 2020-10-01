@@ -1,5 +1,6 @@
 <script>
 	import CustomerCard from '../components/CustomerCard.svelte';
+	import NewCustomerForm from '../components/NewCustomerForm.svelte';
 </script>
 <svelte:head>
 	<title>Customers</title>
@@ -33,27 +34,18 @@
 		overflow: auto;
 		width: 100%;
 	}
-	::-webkit-scrollbar {
-		width: 0.3em;
+
+	#newCustomerFormContainer {
+		width: 100%;
 	}
-
-		/* Track */
-	::-webkit-scrollbar-track {
-		background: #f1f1f1;
-	}
-
-		/* Handle */
-	::-webkit-scrollbar-thumb {
-		background: var(--primary-color);
-	}
-
-		/* Handle on hover */
-
 </style>
 
 <div id="customersSectionsWrapper">
 	<section id="newCustomerSection">
 		<h1>Register new Customer</h1>
+		<div id="newCustomerFormContainer">
+			<NewCustomerForm />
+		</div>
 	</section>
 	<section id="customersListSection">
 		<h1>All customers</h1>
