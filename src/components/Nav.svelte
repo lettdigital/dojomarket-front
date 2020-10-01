@@ -7,7 +7,7 @@
 
 <style>
 	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
+		border-bottom: 0.2px solid #000;
 		font-weight: 300;
 		padding: 0 1em;
 		display: flex;

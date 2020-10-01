@@ -21,7 +21,7 @@
 	#customersListSection {
 		flex: 1;
 		flex-direction: column;
-		border-left: 1px solid rgba(255,62,0,0.1);
+		border-left: 0.2px solid #000;
 		display: flex;
 		align-items: center;
 		padding: 0 2em;
@@ -35,32 +35,31 @@
 		width: 100%;
 	}
 
-	#newCustomerFormContainer {
-		width: 100%;
+	#newCustomerForm {
 	}
 </style>
 
 <div id="customersSectionsWrapper">
 	<section id="newCustomerSection">
 		<h1>Register new Customer</h1>
-		<div id="newCustomerFormContainer">
+		<div id="newCustomerForm">
 			<NewCustomerForm />
 		</div>
 	</section>
 	<section id="customersListSection">
 		<h1>All customers</h1>
 		<ul id="customersList">
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
-			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="01"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="02"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="03"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="04"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="05"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="06"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="07"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="08"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="09"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="10"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com" id="100"/>
 		</ul>
 	</section>
 </div>
