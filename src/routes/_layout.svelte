@@ -7,16 +7,30 @@
 <style>
 	main {
 		position: relative;
-		max-width: 56em;
 		background-color: white;
 		padding: 2em;
-		margin: 0 auto;
 		box-sizing: border-box;
 	}
+
+	.mainContent {
+		flex: 1;
+		overflow: hidden;
+	}
+
+	.pageContainer {
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		height: 100vh;
+		max-height: 100vh;
+		min-width: 625;
+}
 </style>
 
-<Nav {segment}/>
-
-<main>
-	<slot></slot>
-</main>
+<div class="pageContainer">
+	<Nav {segment}/>
+	
+	<main class="mainContent">
+		<slot></slot>
+	</main>
+</div>

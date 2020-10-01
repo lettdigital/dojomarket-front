@@ -30,8 +30,22 @@ code {
 	border-radius: 2px;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 625px) {
 	body {
 		font-size: 16px;
 	}
+}
+
+::-webkit-scrollbar {
+	width: 0.3em;
+}
+
+	/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+	/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
 }

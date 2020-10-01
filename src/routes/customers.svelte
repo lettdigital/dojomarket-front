@@ -1,7 +1,74 @@
+<script>
+	import CustomerCard from '../components/CustomerCard.svelte';
+</script>
 <svelte:head>
 	<title>Customers</title>
 </svelte:head>
+<style>
+	#customersSectionsWrapper {
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+	#newCustomerSection {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 2em;
+	}
+	#customersListSection {
+		flex: 1;
+		flex-direction: column;
+		border-left: 1px solid rgba(255,62,0,0.1);
+		display: flex;
+		align-items: center;
+		padding: 0 2em;
+	}
+	#customersList {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		padding-right: 0.5em;
+		overflow: auto;
+		width: 100%;
+	}
+	::-webkit-scrollbar {
+		width: 0.3em;
+	}
 
-<h1>Customers this site</h1>
+		/* Track */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
 
-<p>This is the 'Customers' page. There's not much here.</p>
+		/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: var(--primary-color);
+	}
+
+		/* Handle on hover */
+
+</style>
+
+<div id="customersSectionsWrapper">
+	<section id="newCustomerSection">
+		<h1>Register new Customer</h1>
+	</section>
+	<section id="customersListSection">
+		<h1>All customers</h1>
+		<ul id="customersList">
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+			<CustomerCard name="Pedro" email="pedro.slages@gmail.com"/>
+		</ul>
+	</section>
+</div>
