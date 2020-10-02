@@ -24,12 +24,10 @@
 		height: 100vh;
 		max-height: 100vh;
 		min-width: 625;
-}
+	}
 </style>
-
 <div class="pageContainer">
 	<Nav {segment}/>
-	
 	<main class="mainContent">
 		<slot></slot>
 	</main>

@@ -1,5 +1,6 @@
 <script>
     import TextField from './TextField.svelte';
+    import FormButton from './FormButton.svelte';
     import * as yup from 'yup';
     let name = "";
     let email = "";
@@ -32,12 +33,15 @@
     #newCustomerForm {
         display: flex;
         flex-direction: column;
-        margin: auto
+        padding: 2.5em;
+        width: 80%;
+        box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.1);
+        margin-top: 3em;
     }
 </style>
 <form id="newCustomerForm" on:submit|preventDefault={handleSubmit}>
-    <TextField label="Nome" bind:value={name} required name="nome" {submited}/>
-    <TextField label="E-mail" bind:value={email} required name="email" {submited}/>
-    <button type="submit" on:click|once={() => {submited = true}}> Enviar </button>
+    <TextField label="Nome" bind:value={name} required name="nome" {error} placeholder="Please insert the customer name"/>
+    <TextField label="E-mail" bind:value={email} required name="email" {error} placeholder="Please insert the customer e-mail"/>
+    <FormButton handleSubmit={() => {submited = true}} label="CREATE CUSTOMER"/>
     {error}
 </form>

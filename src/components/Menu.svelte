@@ -32,7 +32,7 @@
 		position: absolute;
 		content: '';
 		width: calc(100% - 1em);
-		height: 2px;
+		height: 3px;
 		background-color: var(--primary-color);
 		display: block;
 		bottom: -1px;

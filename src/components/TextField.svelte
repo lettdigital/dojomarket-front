@@ -3,29 +3,49 @@
     export let value;
     export let required = false;
     export let name = "";
-    export let submited;
+    export let error = "";
+    export let placeholder = "";
 </script>
 
 <style>
     label {
         margin-right: 0.5em;
+
     }
 
     input {
         margin-bottom: 1em;
+        flex: 1;
+        border: none;
+        border-bottom: solid #000 0.1em;
+        font-size: 18px;
+    }
+    input:focus {
+        outline: 0;
+        border-bottom: solid var(--primary-color) 0.1em;
     }
 
     div {
-        display: flex
+        display: flex;
+        margin-bottom: 1em;
     }
+
+    .error {
+        color: red;
+    }
+
 </style>
 
 <div>
     <label for={name}>
-        {label}
-        <span style={submited ? "color: red": ""}>{required ? "*" : ""}:</span>
+        <b>
+            {label}
+        </b>
+        <span class:error>{required ? "*" : ""}</span>
+        :
     </label>
     <input 
+    placeholder={placeholder}
     type="text" 
     bind:value={value} 
     required={required} 

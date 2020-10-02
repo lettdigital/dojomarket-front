@@ -33,18 +33,14 @@
 		padding-right: 0.5em;
 		overflow: auto;
 		width: 100%;
-	}
-
-	#newCustomerForm {
+		padding-top: 0.5em;
 	}
 </style>
 
-<div id="customersSectionsWrapper">
+<div id="customersSectionsWrapper" class="fadeIn">
 	<section id="newCustomerSection">
-		<h1>Register new Customer</h1>
-		<div id="newCustomerForm">
-			<NewCustomerForm />
-		</div>
+		<h1>Register a new Customer</h1>
+		<NewCustomerForm />
 	</section>
 	<section id="customersListSection">
 		<h1>All customers</h1>
