@@ -11,8 +11,8 @@
 		padding: 0 1em;
 		display: flex;
 		justify-content: space-between;
-		box-sizing: border-box;
 		box-shadow: 0px 2px 2px -2px rgba(0,0,0,.2);
+		z-index: 1;
 	}
 	a {
 		text-decoration: none;
