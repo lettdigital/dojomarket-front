@@ -1,6 +1,8 @@
 <script>
 	import ProductCard from '../components/ProductCard.svelte';
 	import NewProductForm from '../components/NewProductForm.svelte';
+	import { products } from '../stores/products.js'
+	products.fetch();
 </script>
 <svelte:head>
 	<title>Products</title>
@@ -47,17 +49,14 @@
 	<section id="productsListSection">
 		<h1>All products</h1>
 		<ul id="productsList">
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="01"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="02"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="03"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="04"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="05"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="06"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="07"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="08"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="09"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="10"/>
-			<ProductCard name="Camisa" description="A blue t-shirt" price="14,90" id="100"/>
+			{#each $products as product}
+				<ProductCard 
+					name={product.name} 
+					description={product.description}
+					price={product.price} 
+					id={product.id}
+				/>
+			{/each}
 		</ul>
 	</section>
 </div>

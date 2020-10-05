@@ -11,7 +11,7 @@
 		padding: 0 1em;
 		display: flex;
 		justify-content: space-between;
-		box-shadow: 0px 2px 2px -2px rgba(0,0,0,.2);
+		box-shadow: 0px 4px 4px -2px rgba(0,0,0,.2);
 		z-index: 1;
 	}
 	a {
@@ -33,7 +33,7 @@
 
 <nav>
 	<a href=".">
-		<Icon scale="2" data={shoppingCart} style="color: var(--primary-color)" spin={false}/>
+		<Icon scale="2" data={shoppingCart} style="color: var(--primary-color)"/>
 		<h1>Dojo Market</h1>
 	</a>
 	<Menu {segment}/>

@@ -45,6 +45,6 @@
 </svelte:head>
 
 <div id="landingPageContainer" class="fadeIn">
-<h1>A open-source market by LETT!</h1>
-<img src="/product.png" alt="Shopping bag"/>
+	<h1>A open-source market by LETT!</h1>
+	<img src="/product.png" alt="Shopping bag"/>
 </div>

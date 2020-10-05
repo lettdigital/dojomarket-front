@@ -66,9 +66,38 @@ code {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
 }
+
+@-webkit-keyframes pressed {
+	0% { transform: scaleX(1) scaleY(1); }
+	50% { transform: scaleX(0.95) scaleY(0.95); }
+	100% { transform: scaleX(1) scaleY(1); }
+}
+@-moz-keyframes pressed {
+	0% { transform: scaleX(1) scaleY(1); }
+	50% { transform: scaleX(0.95) scaleY(0.95); }
+	100% { transform: scaleX(1) scaleY(1); }
+}
+@-o-keyframes pressed {
+	0% { transform: scaleX(1) scaleY(1); }
+	50% { transform: scaleX(0.95) scaleY(0.95); }
+	100% { transform: scaleX(1) scaleY(1); }
+}
+@keyframes pressed {
+	0% { transform: scaleX(1) scaleY(1); }
+	50% { transform: scaleX(0.95) scaleY(0.95); }
+	100% { transform: scaleX(1) scaleY(1); }
+}
 .fadeIn {
 	-webkit-animation: fadeIn 0.5s ease-in-out;
 	-moz-animation: fadeIn 0.5s ease-in-out;
 	-o-animation: fadeIn 0.5s ease-in-out;
 	animation: fadeIn 0.5s ease-in-out;
+}
+
+.pressed:focus {
+	background-color: #00e366;
+	-webkit-animation: pressed 0.5s ease-in-out;
+	-moz-animation: pressed 0.5s ease-in-out;
+	-o-animation: pressed 0.5s ease-in-out;
+	animation: pressed 0.5s ease-in-out; 
 }

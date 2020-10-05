@@ -18,7 +18,6 @@
     }
     button:focus {
         background-color: #00e366;
-        transform: scaleX(0.95) scaleY(0.95);
     }
 </style>
-<button type="submit" on:click|once={handleSubmit}>{label}</button>
+<button class="pressed" type="submit" on:click|once={handleSubmit}>{label}</button>
