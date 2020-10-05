@@ -1,7 +1,7 @@
 <script>
     import { user, checkCircle, shoppingBag, shoppingCart } from 'svelte-awesome/icons'
     import Step from './Step.svelte';
-    let currentStep = 0;
+    export let currentStep = 0;
 </script>
 <style>
     #stepsContainer {

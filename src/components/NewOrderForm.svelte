@@ -1,5 +1,6 @@
 <script>
     import NewOrderSteps from './NewOrderSteps.svelte';
+    let currentStep = 0;
 </script>
 <style>
     #newOrderFormContainer {
@@ -15,7 +16,7 @@
     }
 </style>
 <div id="newOrderFormContainer">
-    <NewOrderSteps />
+    <NewOrderSteps {currentStep}/>
     <form id="newOrderForm">
 
     </form>
