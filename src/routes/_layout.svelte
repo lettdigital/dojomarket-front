@@ -15,12 +15,7 @@
 		overflow: hidden;
 	}
 
-	.backgroundImage {
-		background-image: url("/px.png");
-		background-position: 0% 80%;
-		background-repeat: no-repeat;
-		background-size: 1200px;
-	}
+	
 
 	.pageContainer {
 		display: flex;

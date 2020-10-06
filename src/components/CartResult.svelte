@@ -30,6 +30,7 @@
     p {
         margin: 0;
         padding: 0;
+        font-size: 1.5em;
     }
 
 
@@ -45,11 +46,21 @@
     .price {
         text-align: end;
         padding: 1em;
+        font-size: 1.5em;
     }
 
     .price > b {
         color: var(--primary-color);
-        font-size: 18px
+        font-size: 18px;
+        font-size: 1.2em;
+
+    }
+
+    h1 {
+        margin: 0px;
+        margin-bottom: 0.2em;
+        padding: 0px;
+        font-size: 2em;
     }
 </style>
 <div id="cartResult">

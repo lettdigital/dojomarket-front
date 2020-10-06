@@ -51,7 +51,7 @@
     on:click={handleSelect}
 >
     <div>
-        <img src={image}/>
+        <img src={image} alt="logo"/>
         <h1>{name}</h1>
     </div>
 </li>

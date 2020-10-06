@@ -87,6 +87,7 @@ code {
 	50% { transform: scaleX(0.95) scaleY(0.95); }
 	100% { transform: scaleX(1) scaleY(1); }
 }
+
 .fadeIn {
 	-webkit-animation: fadeIn 0.5s ease-in-out;
 	-moz-animation: fadeIn 0.5s ease-in-out;
@@ -100,4 +101,36 @@ code {
 	-moz-animation: pressed 0.5s ease-in-out;
 	-o-animation: pressed 0.5s ease-in-out;
 	animation: pressed 0.5s ease-in-out; 
+}
+
+@-webkit-keyframes wave {
+	0% { background-size: 1100px; background-position-x: -50%; }
+	50% { background-size: 1600px; }
+	100% { background-size: 1200px; background-position-x: 0%; }
+}
+@-moz-keyframes wave {
+	0% { background-size: 1100px; background-position-x: -50%; }
+	50% { background-size: 1600px; }
+	100% { background-size: 1200px; background-position-x: 0%; }
+}
+@-o-keyframes wave {
+	0% { background-size: 1100px; background-position-x: -50%; }
+	50% { background-size: 1600px; }
+	100% { background-size: 1200px; background-position-x: 0%; }
+}
+@keyframes wave {
+	0% { background-size: 1100px; background-position-x: -50%; }
+	50% { background-size: 1600px; }
+	100% { background-size: 1200px; background-position-x: 0%; }
+}
+
+.backgroundImage {
+	background-image: url("/px.png");
+	background-position: 0% 80%;
+	background-repeat: no-repeat;
+	background-size: 1200px;
+	-webkit-animation: wave 1.5s ease-in-out;
+	-moz-animation: wave 1.5s ease-in-out;
+	-o-animation: wave 1.5s ease-in-out;
+	animation: wave 1.5s ease-in-out;
 }
