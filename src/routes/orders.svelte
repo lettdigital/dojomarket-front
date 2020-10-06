@@ -9,7 +9,6 @@
 	<title>Orders</title>
 </svelte:head>
 <style>
-	
 	#ordersSectionsWrapper {
 		display: flex;
 		width: 100%;

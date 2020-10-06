@@ -11,8 +11,8 @@
     }
 </style>
 <div id="stepsContainer">
-    <Step icon={user} hasProgressBar concluded={currentStep > 0} stepName="Customer"/>
-    <Step icon={shoppingBag} hasProgressBar concluded={currentStep > 1} stepName="Products"/>
-    <Step icon={shoppingCart} hasProgressBar concluded={currentStep > 2} stepName="Confirm"/>
-    <Step icon={checkCircle} concluded={currentStep >= 3} stepName="Done"/>
+    <Step icon={user} hasProgressBar concluded={currentStep > 0} inProgress={currentStep === 0} stepName="Customer"/>
+    <Step icon={shoppingBag} hasProgressBar concluded={currentStep > 1} inProgress={currentStep === 1} stepName="Products"/>
+    <Step icon={shoppingCart} hasProgressBar concluded={currentStep > 2} inProgress={currentStep === 2} stepName="Confirm"/>
+    <Step icon={checkCircle} inProgress={currentStep >= 3} stepName="Done"/>
 </div>

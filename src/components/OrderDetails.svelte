@@ -81,6 +81,27 @@
                 <span>U$14.50</span>
             </div>
         </li>
+        <li>
+            <span>Product Name - ID 01</span>
+            <div id="productInfo">
+                <span style="flex: 1">Product description</span>
+                <span>U$14.50</span>
+            </div>
+        </li>
+        <li>
+            <span>Product Name - ID 01</span>
+            <div id="productInfo">
+                <span style="flex: 1">Product description</span>
+                <span>U$14.50</span>
+            </div>
+        </li>
+        <li>
+            <span>Product Name - ID 01</span>
+            <div id="productInfo">
+                <span style="flex: 1">Product description</span>
+                <span>U$14.50</span>
+            </div>
+        </li>
         
         
     </ul>

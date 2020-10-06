@@ -3,6 +3,7 @@
     export let icon;
     export let hasProgressBar = false;
     export let concluded;
+    export let inProgress;
     export let stepName;
 
 </script>
@@ -28,7 +29,7 @@
     }
 </style>
 <div class="step">
-    <Icon scale="2" data={icon} style={concluded ? "color: var(--primary-color); width: 32px" : "color: #000; width: 32px"}/>
+    <Icon scale="2" data={icon} style={inProgress || concluded ? "color: var(--primary-color); width: 32px" : "color: #000; width: 32px"}/>
     <h1>{stepName}</h1>
 </div>
 {#if hasProgressBar}

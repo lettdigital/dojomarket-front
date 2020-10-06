@@ -10,7 +10,8 @@
 <style>
     label {
         margin-right: 0.5em;
-
+        width: 120px;
+        text-align: right;
     }
 
     input {
