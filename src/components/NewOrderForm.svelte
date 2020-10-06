@@ -7,7 +7,8 @@
     import { cart } from '../stores/cart.js';
     import { onMount } from 'svelte';
     onMount(async () => {
-		cart.fetch();
+        cart.fetch();
+        cart.resetCart();
 	});
     let currentStep = 0;
 
@@ -102,6 +103,14 @@
         color: var(--primary-color);
         font-size: 3em;
         font-weight: bold;
+        text-align: center;
+    }
+
+    h2 {
+        color: red;
+        text-align: center;
+        width: 100%;
+        height: 100%;
     }
 
     #succesfullyOrderedContainer {
@@ -120,31 +129,39 @@
     <NewOrderSteps {currentStep}/>
     <form id="newOrderForm" on:submit|preventDefault={() => {console.log($cart); handleNextStep();}}>
         {#if currentStep === 0}
-            <ul>
-                {#each $customers as customer}
-                <NewOrderFormCard 
-                    disabled={$cart.customer != undefined ? $cart.customer.id !== customer.id : false}
-                    selected={$cart.customer != undefined ? $cart.customer.id === customer.id : false}
-                    name={customer.name}
-                    handleSelect={() => cart.changeCustomer(customer)}
-                    image="/customer.png"
-                />
-                {/each}
-            </ul>
-            {:else if currentStep === 1}
-            <ul>
-                {#each $products as product}
-                <NewOrderFormCard 
-                    selected={$cart.products.map(p => p.id).find(p => p === product.id) !== undefined}
-                    name={product.name}
-                    handleSelect={() => cart.toggleProduct(product)}
-                    image="/product.png"
-                />
-                {/each}
-            </ul>
-            {:else if currentStep === 2}
-                <CartResult />
-            {:else if currentStep === 3}
+            {#if $customers.length > 0}
+                <ul>
+                    {#each $customers as customer}
+                        <NewOrderFormCard 
+                            disabled={$cart.customer != undefined ? $cart.customer.id !== customer.id : false}
+                            selected={$cart.customer != undefined ? $cart.customer.id === customer.id : false}
+                            name={customer.name}
+                            handleSelect={() => cart.changeCustomer(customer)}
+                            image="/customer.png"
+                        />
+                    {/each}
+                </ul>
+            {:else}
+                <h2>First you need to create some customers!</h2>
+            {/if}
+        {:else if currentStep === 1}
+            {#if $products.length > 0}
+                <ul>
+                        {#each $products as product}
+                            <NewOrderFormCard 
+                                selected={$cart.products.map(p => p.id).find(p => p === product.id) !== undefined}
+                                name={product.name}
+                                handleSelect={() => cart.toggleProduct(product)}
+                                image="/product.png"
+                            />
+                        {/each}
+                </ul>
+            {:else}
+                <h2>First you need to create some products!</h2>
+            {/if}
+        {:else if currentStep === 2}
+            <CartResult />
+        {:else if currentStep === 3}
             <div id="succesfullyOrderedContainer">
                 <h1>SUCCESFULLY ORDERED!</h1>
                 <button on:click={handleReset} style="font-size: 1em; padding: 0.8em;">MAKE ANOTHER ORDER</button>

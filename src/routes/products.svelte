@@ -39,6 +39,16 @@
 		width: 100%;
 		padding-top: 0.5em;
 	}
+
+	h1 {
+        font-size: 3em;
+        font-weight: normal;
+        text-align: center;
+	}
+	#noProductsWarning {
+        color: red;
+		text-align: center;
+	}
 </style>
 
 <div id="productsSectionsWrapper" class="fadeIn">
@@ -49,14 +59,18 @@
 	<section id="productsListSection">
 		<h1>All products</h1>
 		<ul id="productsList">
-			{#each $products as product}
-				<ProductCard 
-					name={product.name} 
-					description={product.description}
-					price={product.price} 
-					id={product.id}
-				/>
-			{/each}
+			{#if $products.length > 0}
+				{#each $products as product}
+					<ProductCard 
+						name={product.name} 
+						description={product.description}
+						price={product.price} 
+						id={product.id}
+					/>
+				{/each}
+			{:else}
+				<h2 id="noProductsWarning">First you need to create some Products!</h2>
+			{/if}
 		</ul>
 	</section>
 </div>

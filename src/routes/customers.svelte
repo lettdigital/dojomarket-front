@@ -37,6 +37,16 @@
 		width: 100%;
 		padding-top: 0.5em;
 	}
+	h1 {
+        font-size: 3em;
+        font-weight: normal;
+        text-align: center;
+	}
+	
+	#noCustomersWarning {
+        color: red;
+		text-align: center;
+	}
 </style>
 
 <div id="customersSectionsWrapper" class="fadeIn">
@@ -47,9 +57,13 @@
 	<section id="customersListSection">
 		<h1>All customers</h1>
 		<ul id="customersList">
-			{#each $customers as customer}
-			<CustomerCard name={customer.name} email={customer.email} id={customer.id}/>
-			{/each}
+			{#if $customers.length > 0}
+				{#each $customers as customer}
+					<CustomerCard name={customer.name} email={customer.email} id={customer.id}/>
+				{/each}
+			{:else}
+				<h2 id="noCustomersWarning">First you need to create some Products!</h2>
+			{/if}
 		</ul>
 	</section>
 </div>

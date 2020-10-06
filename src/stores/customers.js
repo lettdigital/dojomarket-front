@@ -76,7 +76,6 @@ function createCustomers() {
                 email: "pedrolages@mail.com",
                 id: "14"
             },
-
         ])
     }
 }

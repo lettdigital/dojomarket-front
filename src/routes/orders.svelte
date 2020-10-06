@@ -39,6 +39,17 @@
 		width: 100%;
 		padding-top: 0.5em;
 	}
+
+	h1 {
+        font-size: 3em;
+        font-weight: normal;
+        text-align: center;
+	}
+
+	#noOrdersWarning {
+		color: red;
+		text-align: center;
+	}
 </style>
 
 <div id="ordersSectionsWrapper" class="fadeIn">
@@ -50,14 +61,18 @@
 		<Modal>
 			<h1>All orders</h1>
 			<ul id="ordersList">
-				{#each $orders as order}
-				<OrderCard 
-					customerName={order.customerName} 
-					numberOfProducts={order.numberOfProducts} 
-					total={order.total}
-					id={order.id}
-				/>
-				{/each}
+				{#if $orders.length > 0}
+					{#each $orders as order}
+						<OrderCard 
+							customerName={order.customerName} 
+							numberOfProducts={order.numberOfProducts} 
+							total={order.total}
+							id={order.id}
+						/>
+					{/each}
+				{:else}
+					<h2 id="noOrdersWarning">First you need to create some Orders!</h2>
+				{/if}
 			</ul>
 		</Modal>
 	</section>
