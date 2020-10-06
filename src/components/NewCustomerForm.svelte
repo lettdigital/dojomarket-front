@@ -38,10 +38,18 @@
         box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.1);
         margin-top: 3em;
     }
+
+    p {
+        color: red;
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+        margin-top: 1em;
+    }
 </style>
 <form id="newCustomerForm" on:submit|preventDefault={handleSubmit}>
     <TextField label="Nome" bind:value={name} required name="nome" {error} placeholder="Please insert the customer name"/>
     <TextField label="E-mail" bind:value={email} required name="email" {error} placeholder="Please insert the customer e-mail"/>
     <FormButton handleSubmit={() => {submited = true}} label="CREATE CUSTOMER"/>
-    {error}
+    <p>{error}</p>
 </form>

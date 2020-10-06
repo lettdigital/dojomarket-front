@@ -42,11 +42,18 @@
         box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.1);
         margin-top: 3em;
     }
+    p {
+        color: red;
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+        margin-top: 1em;
+    }
 </style>
 <form id="newProductForm" on:submit|preventDefault={handleSubmit}>
     <TextField label="Name" bind:value={name} required name="name" {error} placeholder="Please insert the product name"/>
     <TextField label="Price" bind:value={price} required name="price" {error} placeholder="Please insert the product price"/>
     <TextField label="Description" bind:value={description} required name="description" {error} placeholder="Please insert the product description"/>
     <FormButton handleSubmit={() => {submited = true}} label="CREATE PRODUCT"/>
-    {error}
+    <p>{error}</p>
 </form>
