@@ -9,9 +9,9 @@ function createCart() {
 
     return {
         subscribe,
-        fetch: () => {
-            products.fetch();
-            customers.fetch();
+        fetch: async() => {
+            await products.fetch();
+            await customers.fetch();
         },
         changeCustomer: (customer) => {
             update(cart => ({...cart, customer}))

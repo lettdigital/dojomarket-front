@@ -2,7 +2,12 @@
 	import ProductCard from '../components/ProductCard.svelte';
 	import NewProductForm from '../components/NewProductForm.svelte';
 	import { products } from '../stores/products.js'
-	products.fetch();
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		await products.fetch();
+	})
+
 </script>
 <svelte:head>
 	<title>Products</title>

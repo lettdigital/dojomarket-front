@@ -6,10 +6,12 @@
     import { products } from '../stores/products.js';
     import { cart } from '../stores/cart.js';
     import { onMount } from 'svelte';
+
     onMount(async () => {
-        cart.fetch();
+        await cart.fetch();
         cart.resetCart();
-	});
+    });
+    
     let currentStep = 0;
 
     function handleReset() {
