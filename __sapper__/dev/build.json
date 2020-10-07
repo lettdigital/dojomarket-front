@@ -2,7 +2,7 @@
   "bundler": "rollup",
   "shimport": "2.0.4",
   "assets": {
-    "main": "client.e14e1962.js"
+    "main": "client.67e015fb.js"
   },
   "css": {
     "main": [
@@ -11,37 +11,39 @@
   },
   "dependencies": {
     "index.svelte": [
-      "index.d93c7767.js",
+      "index.d378ef30.js",
       "inject_styles.5607aec6.js",
       "index-02ef8159.css"
     ],
     "customers.svelte": [
-      "customers.58a0d7b9.js",
-      "index.0866fc17.js",
-      "FormButton.6a6f7d08.js",
-      "customers.021cd030.js",
+      "customers.b8d64270.js",
+      "index.8ebd2c6c.js",
+      "index.837dd939.js",
+      "customers.faab95ae.js",
       "inject_styles.5607aec6.js",
       "index-4f592eb5.css",
-      "FormButton-8dfd4370.css",
-      "customers-7ddb3a29.css"
+      "index-8dfd4370.css",
+      "customers-499202be.css",
+      "customers-7a2d0a90.css"
     ],
     "products.svelte": [
-      "products.29346c06.js",
-      "index.0866fc17.js",
-      "FormButton.6a6f7d08.js",
-      "products.1d974256.js",
+      "products.d6e292a9.js",
+      "index.8ebd2c6c.js",
+      "index.837dd939.js",
+      "products.058269f4.js",
       "inject_styles.5607aec6.js",
       "index-4f592eb5.css",
-      "FormButton-8dfd4370.css",
-      "products-f89a069e.css"
+      "index-8dfd4370.css",
+      "products-7b826e5c.css"
     ],
     "orders.svelte": [
-      "orders.850b4ac3.js",
-      "FormButton.6a6f7d08.js",
-      "customers.021cd030.js",
-      "products.1d974256.js",
+      "orders.efe29226.js",
+      "index.837dd939.js",
+      "customers.faab95ae.js",
+      "products.058269f4.js",
       "inject_styles.5607aec6.js",
-      "FormButton-8dfd4370.css",
+      "index-8dfd4370.css",
+      "customers-499202be.css",
       "orders-891593e4.css"
     ]
   }

@@ -1,5 +1,7 @@
 import axios from 'axios';
 
-const customersApi = axios.create("localhost:3000");
+const customersApi = axios.create({
+    baseURL: "http://localhost:3333"
+});
 
 export default customersApi;

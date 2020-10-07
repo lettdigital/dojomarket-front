@@ -2,7 +2,13 @@
 	import CustomerCard from '../components/CustomerCard.svelte';
 	import NewCustomerForm from '../components/NewCustomerForm.svelte';
 	import { customers } from '../stores/customers';
-	customers.fetch();
+	import { loading } from '../stores/loading';
+	import { onMount } from 'svelte';
+	
+	onMount(async () => {
+		await customers.fetch();
+	});
+
 </script> 
 <svelte:head>
 	<title>Customers</title>
@@ -43,7 +49,7 @@
         text-align: center;
 	}
 	
-	#noCustomersWarning {
+	h2 {
         color: red;
 		text-align: center;
 	}
@@ -57,13 +63,15 @@
 	<section id="customersListSection">
 		<h1>All customers</h1>
 		<ul id="customersList">
-			{#if $customers.length > 0}
-				{#each $customers as customer}
-					<CustomerCard name={customer.name} email={customer.email} id={customer.id}/>
-				{/each}
+			{#each $customers as customer}
+				<CustomerCard name={customer.name} email={customer.email} id={customer.id}/>
 			{:else}
-				<h2 id="noCustomersWarning">First you need to create some Products!</h2>
-			{/if}
+				{#if $loading}
+					<h2>Loading...</h2>
+				{:else}
+					<h2 id="noCustomersWarning">First you need to create some Products!</h2>
+				{/if}
+			{/each}
 		</ul>
 	</section>
 </div>

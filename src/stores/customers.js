@@ -1,20 +1,22 @@
 import { writable } from 'svelte/store';
-import { createNewCustomers, showCustomers } from "../services/customers";
+import { createNewCustomer, showCustomers } from "../services/customers";
+import { loading } from './loading';
 
 function createCustomers() {
     const { subscribe, set, update } = writable([]);
 
     const fetch = async () => {
+        loading.toggle(true);
         await showCustomers()
-                .then(r => set(r.data))
-                .catch(err => console.log(err));
+                .then(r => {set(r.data); loading.toggle(false)})
+                .catch(err => {console.log(err); loading.toggle(false)});
     }
 
     return {
         subscribe,
         fetch,
-        create: async ({ nome, email }) => {
-            await createNewCustomers({ nome, email })
+        create: async ({ name, email }) => {
+            await createNewCustomer({ name, email })
                     .then(async r => await fetch())
                     .catch(err => console.log(err));
         }

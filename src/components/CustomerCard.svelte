@@ -36,17 +36,6 @@
         height: 100%;
     }
     
-    h1 {
-        font-size: 6em;
-        width: 1.5em;
-        margin: 0;
-        color: var(--primary-color);
-        border-right: 0.2px solid #000;
-        font-family: 'Zilla Slab', serif;
-        padding-right: 0.2em;
-        text-align: center;
-    }
-    
     b {
         color: var(--primary-color);
     }
@@ -59,10 +48,10 @@
 </style>
 <li>
     <div id="customerCardContent">
-        <h1>{id}</h1>
         <div id="customerCardDetails">
             <p><b>Name</b>: {name}</p>
             <p><b>Email</b>: {email}</p>
+            <p><b>{id}</b></p>
         </div>
     </div>
     <img src="/customer.png" alt="Customer representative logo"/>

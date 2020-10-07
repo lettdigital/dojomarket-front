@@ -1,10 +1,10 @@
 import productsApi from './productsApi';
 
-async function createNewProduct ({ nome, descricao, preco }) {
-    const response = await productsApi.post("/products", {
-        nome,
-        descricao,
-        preco
+async function createNewProduct ({ name, description, price }) {
+    const response = await productsApi.post("/product", {
+        name,
+        description,
+        price
     })
 
     return response;

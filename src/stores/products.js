@@ -13,8 +13,8 @@ function createProducts() {
     return {
         subscribe,
         fetch,
-        create: async ({ nome, descricao, preco }) => {
-            await createNewProduct({ nome, descricao, preco })
+        create: async ({ name, description, price }) => {
+            await createNewProduct({ name, description, price })
                     .then(async r => await fetch())
                     .catch(err => console.log(err));
         }
