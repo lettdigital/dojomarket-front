@@ -3,6 +3,9 @@
 	import Modal from '../components/Modal.svelte';
 	import NewOrderForm from '../components/NewOrderForm.svelte';
 	import { orders } from '../stores/orders.js';
+	function getTotal (products) {
+        return products.map(p => p.price).reduce((total, currentValue) => Number(total) + Number(currentValue));
+    }
 	orders.fetch()
 </script>
 <svelte:head>
@@ -64,10 +67,10 @@
 				{#if $orders.length > 0}
 					{#each $orders as order}
 						<OrderCard 
-							customerName={order.customerName} 
-							numberOfProducts={order.numberOfProducts} 
-							total={order.total}
-							id={order.id}
+							customerId={order.userId} 
+							numberOfProducts={order.products.length} 
+							total={getTotal(order.products)}
+							id={order.orderId}
 						/>
 					{/each}
 				{:else}

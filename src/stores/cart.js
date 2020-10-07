@@ -1,6 +1,8 @@
 import { writable } from 'svelte/store';
-import { products } from './products.js'
-import { customers } from './customers.js'
+import { products } from './products.js';
+import { customers } from './customers.js';
+import { orders } from './orders.js';
+
 function createCart() {
     const { subscribe, set, update } = writable({
         customer: undefined,
@@ -31,7 +33,10 @@ function createCart() {
         resetCart: () => set({
             customer: undefined,
             products: []
-        })
+        }),
+        createOrder: async (products, token) => {
+            await orders.create({products, token})
+        }
     }
 }
 

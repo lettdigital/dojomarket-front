@@ -51,6 +51,11 @@
                 break;
         }
     }
+
+    async function handleSubmit () {
+        await cart.createOrder($cart.products, $cart.customer.name.concat("_").concat($cart.customer.email))        
+        handleNextStep();
+    }
 </script>
 <style>
     #newOrderFormContainer {
@@ -129,7 +134,7 @@
 </style>
 <div id="newOrderFormContainer">
     <NewOrderSteps {currentStep}/>
-    <form id="newOrderForm" on:submit|preventDefault={() => {console.log($cart); handleNextStep();}}>
+    <form id="newOrderForm" on:submit|preventDefault={handleSubmit}>
         {#if currentStep === 0}
             {#if $customers.length > 0}
                 <ul>

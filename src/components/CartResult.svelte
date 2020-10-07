@@ -3,9 +3,11 @@
     import { cart } from '../stores/cart.js';
     function getTotal () {
         if($cart.products.length > 0)
-            return $cart.products.map(p => p.price).reduce((total, currentValue) => total + currentValue);
+            return $cart.products.map(p => p.price).reduce((total, currentValue) => Number(total) + Number(currentValue));
         return 0;
     }
+
+    
 </script>
 <style>
     #cartResult {

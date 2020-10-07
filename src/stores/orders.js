@@ -17,8 +17,8 @@ function createOrders() {
                     .then(async r => await fetch())
                     .catch(err => console.log(err));
         },
-        show: async () => {
-            await showOrder(id)
+        show: async (id) => {
+            return await showOrder(id)
                     .then(r => r.data)
                     .catch(err => console.log(err));
         }

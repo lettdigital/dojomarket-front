@@ -1,8 +1,15 @@
 <script>
-    export let id;
-    export let customerName;
-    export let total;
+import { onMount } from 'svelte';
 
+    import { orders } from '../stores/orders.js';
+    export let id;
+    export let customerId;
+    export let total;
+    let products;
+    onMount(async () => {
+        const response = await orders.show(id);
+        products = response[0].products;
+    })
 </script>
 <style>
     #orderDetails {
@@ -61,60 +68,23 @@
 </style>
 <h1>Order Details</h1>
 <div id="orderDetails">
-    <p><b>Customer name</b>: {customerName}</p>
+    <p><b>Customer ID</b>: {customerId}</p>
     <p><b>Order ID</b>: {id}</p>
     <ul id="orderProductsList">
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
-        <li>
-            <span>Product Name - ID 01</span>
-            <div id="productInfo">
-                <span style="flex: 1">Product description</span>
-                <span>U$14.50</span>
-            </div>
-        </li>
         
-        
+        {#if products && products.length > 0 }
+            {#each products as product}
+                <li>
+                    <span>{product.name} - ID {product.id}</span>
+                    <div id="productInfo">
+                        <span style="flex: 1">{product.description}</span>
+                        <span>U${product.price}</span>
+                    </div>
+                </li>
+            {/each}
+        {:else}
+            <h1>loading...</h1>
+        {/if}
     </ul>
     <span class="price">Total: <b>U${total}</b></span>
     

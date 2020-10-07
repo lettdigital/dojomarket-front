@@ -3,12 +3,12 @@
     import OrderDetails from "./OrderDetails.svelte";
 
     const { open } = getContext('simple-modal');
-    export let customerName;
+    export let customerId;
     export let numberOfProducts;
     export let total;
     export let id;
     const showModal = () => {
-        open(OrderDetails, {customerName, total, id});
+        open(OrderDetails, { id, customerId, total});
     }
 </script>
 <style>
@@ -68,11 +68,11 @@
 </style>
 <li on:click={showModal}>
         <div id="customerCardContent">
-            <h1>{id}</h1>
             <div id="customerCardDetails">
-                <p><b>Customer name</b>: {customerName}</p>
+                <p><b>Customer id</b>: {customerId}</p>
                 <p><b>Number of products</b>: {numberOfProducts}</p>
                 <p><b>Total</b>: U${total}</p>
+                <p><b>{id}</b></p>
             </div>
         </div>
         <img src="/order.png" alt="Customer representative logo"/>
