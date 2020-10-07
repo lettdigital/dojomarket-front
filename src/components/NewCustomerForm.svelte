@@ -2,6 +2,8 @@
     import TextField from './TextField.svelte';
     import FormButton from './FormButton.svelte';
     import * as yup from 'yup';
+    import { customers } from '../stores/customers';
+
     let name = "";
     let email = "";
     let submited = false;
@@ -23,6 +25,10 @@
         });
         if(error === "") {
             console.log({
+                name,
+                email
+            })
+            await customers.create({
                 name,
                 email
             })

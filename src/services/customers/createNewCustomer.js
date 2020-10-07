@@ -1,9 +1,9 @@
 import customersApi from './customersApi';
 
-async function createNewCustomer ({ nome, email }) {
+async function createNewCustomer ({ name, email }) {
     const response = await customersApi.post("/clients", {
-        nome,
-        email
+        "name": name,
+        "email": email
     })
 
     return response;

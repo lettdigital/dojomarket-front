@@ -1,2 +1,2 @@
-export { default as createNewCustomers } from './createNewCustomers.js';
+export { default as createNewCustomer } from './createNewCustomer.js';
 export { default as showCustomers } from './showCustomers.js';

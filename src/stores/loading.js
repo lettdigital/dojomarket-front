@@ -5,8 +5,8 @@ function createLoading() {
 
     return {
         subscribe,
-        toggle: () => { update(state => !state) }
+        toggle: (value) => { update(state => value) }
     }
 }
 
-export const cart = createLoading();
+export const loading = createLoading();

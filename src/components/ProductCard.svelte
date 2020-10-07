@@ -37,17 +37,6 @@
         height: 100%;
     }
     
-    h1 {
-        font-size: 6em;
-        width: 1.5em;
-        margin: 0;
-        color: var(--primary-color);
-        border-right: 0.2px solid #000;
-        font-family: 'Zilla Slab', serif;
-        padding-right: 0.2em;
-        text-align: center;
-    }
-    
     b {
         color: var(--primary-color);
     }
@@ -60,11 +49,12 @@
 </style>
 <li>
     <div id="productCardContent">
-        <h1>{id}</h1>
         <div id="productCardDetails">
             <p><b>Name</b>: {name}</p>
             <p><b>Description</b>: {description}</p>
             <p><b>Price</b>: U$<b style="color: #000">{price}</b></p>
+            <p><b>{id}</b></p>
+
         </div>
     </div>
     <img src="/product.png" alt="Product representative logo"/>

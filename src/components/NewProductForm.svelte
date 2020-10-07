@@ -2,6 +2,8 @@
     import TextField from './TextField.svelte';
     import FormButton from './FormButton.svelte';
     import * as yup from 'yup';
+    import { products } from '../stores/products.js';
+
     let name = "";
     let description = "";
     let price = "";
@@ -29,7 +31,13 @@
                 name,
                 description,
                 price
+            });
+            products.create({
+                name,
+                description,
+                price
             })
+
         }
     }
 </script>
